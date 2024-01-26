@@ -1,6 +1,6 @@
 print("----------------------------------------------------")
 print("*** Welcome to Stock Value Calculator Program! ***")
-print("----------------------------------------------------",'\n')
+print("----------------------------------------------------")
 
 #taking user input
 
@@ -13,10 +13,14 @@ total_buy = num_purchase * buy_price
 total_sold = num_sold * sell_price
 
 #output
+print("*****************************************************")
+print("                 Purchasing Report                  " )
+print("*****************************************************")
 
-print("Purchasing Report" )
 print("Total Purchase Amount : ", total_buy)
-print("Selling Report")
+print("*****************************************************")
+print("                  Selling Report                     ")
+print("*****************************************************")
 print("Total Sold Amount: ", total_sold)
 
 
