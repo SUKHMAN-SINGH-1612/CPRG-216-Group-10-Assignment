@@ -19,16 +19,22 @@ if num_purchase < num_sold:
     exit()
 
 #commision variable
-p_commision_rate
-s_commision_rate 
+if num_purchase < 1000:
+    p_commision_rate = 100
+else:
+    p_commision_rate = 0
 
+if num_sold <= 1000:
+    s_commision_rate = 100
+elif num_sold > 1000 and num_sold < 2000:
+    s_commision_rate = 50
+elif num_sold >= 2000:
+    s_commision_rate = 0
 
 #calculating the total purchase and sold amount and profit
 total_buy = num_purchase * buy_price
 total_sold = num_sold * sell_price
 profit = total_sold - total_buy - p_commision_rate - s_commision_rate
-
-
 
 #output
 print("*****************************************************")
@@ -41,11 +47,12 @@ print("*****************************************************")
 print("                  Selling Report                     ")
 print("*****************************************************")
 print("Total Sold Amount: $", total_sold)
-print("Selling Commision : $", s_commision_rate)
+print("Sold Commision : $", s_commision_rate)
 print("*****************************************************")
 if profit > 0:
     print("Congratulations, Total Profit: $", profit)
 elif profit < 0:
     print("Good Luck Next Time, You lost: $", profit)
-
-
+elif profit == 0:
+    print("No Profit or No Loss, Total Profit: $", profit)
+print("*****************************************************")
