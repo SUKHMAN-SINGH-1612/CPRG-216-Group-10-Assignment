@@ -6,16 +6,24 @@ print("----------------------------------------------------")
 
 stock_name = input("Enter stock's name : " )
 num_purchase = float(input("Enter the total number of purchased share : "))
-buy_price = float(input("Enter the dollar amount per share purchased: "))
-num_sold = float(input("Enter the total number of shares sold: "))
-sell_price=float(input("Enter the dollar for per share sold : "))
-
-#validation of the user input
-if num_purchase <= 0 or buy_price <= 0 or num_sold <= 0 or sell_price <= 0:
-    print("Error: Negative values are not allowed!")
+if num_purchase <= 0:
+    print("Error: Number of purchased shares should be >0")
     exit()
-if num_purchase < num_sold:
-    print("Error: Total number of shares sold cannot be greater than the total number of shares purchased!")
+buy_price = float(input("Enter the dollar amount per share purchased: "))
+if buy_price <= 0:
+    print("Error: Purchase amount should be >0")
+    exit()
+
+num_sold = float(input("Enter the total number of shares sold: "))
+if num_sold <= 0:
+    print("Error: Number of sold shares should be >0 and must be <= number of purchased shares")
+    exit()
+elif num_sold > num_purchase:
+    print("Error: Number of sold shares should be >0 and must be <= number of purchased shares")
+    exit()
+sell_price=float(input("Enter the dollar for per share sold : "))
+if sell_price <= 0:
+    print("Error: Sold amount should be >0")
     exit()
 
 #commision variable
@@ -24,9 +32,9 @@ if num_purchase < 1000:
 else:
     p_commision_rate = 0
 
-if num_sold <= 1000:
+if num_sold < 1000:
     s_commision_rate = 100
-elif num_sold > 1000 and num_sold < 2000:
+elif num_sold >= 1000 and num_sold < 2000:
     s_commision_rate = 50
 elif num_sold >= 2000:
     s_commision_rate = 0
