@@ -65,10 +65,6 @@ else:
     #output
     total_buy = num_purchase * buy_price
     total_sold = num_sold * sell_price
-    print("Purchasing Report" )
-    print("Total Purchase Amount : ", total_buy)
-    print("Selling Report")
-    print("Total Sold Amount: ", total_sold)
 
     print(OUTPUT_ASTERISKS)
     print("                 Purchasing Report                  " )
@@ -84,7 +80,8 @@ else:
     print(OUTPUT_ASTERISKS)
 
     # ------profit or loss output: deduct commission, add profit or loss output-----------------
-    result = total_sold - total_buy - commission_purchase - commission_sale
+    total_cost = buy_price * num_sold
+    result = total_sold - total_cost - commission_purchase - commission_sale
     if result == 0:
         print("No Profit or Loss, Total Profit: $0")
         print(OUTPUT_ASTERISKS)
