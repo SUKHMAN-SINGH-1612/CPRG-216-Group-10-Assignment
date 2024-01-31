@@ -1,67 +1,96 @@
-aster = ("*****************************************************")
-print("----------------------------------------------------")
+''' 
+Stock Value Scenario
+'''
+
+# ---------------CONSTANTS-------------------
+# - THREDSHOLDS
+THREDSHOLD_1000 = 1000
+THREDSHOLD_2000 = 2000
+# - COMMISSIONS
+COMMISSION_FREE = 0
+COMMISSION_50 = 50
+COMMISSION_100 = 100
+# - output asterisks
+OUTPUT_ASTERISKS = "****************************************************"
+WELCOME_DASHLINE = "----------------------------------------------------"
+
+
+# intro
+print(WELCOME_DASHLINE)
 print("*** Welcome to Stock Value Calculator Program! ***")
-print("----------------------------------------------------")
+print(WELCOME_DASHLINE)
 
 #taking user input
-
 stock_name = input("Enter stock's name : " )
 num_purchase = float(input("Enter the total number of purchased share : "))
-if num_purchase <= 0:
-    print("Error: Number of purchased shares should be >0")
-    exit()
 buy_price = float(input("Enter the dollar amount per share purchased: "))
-if buy_price <= 0:
-    print("Error: Purchase amount should be >0")
-    exit()
-
 num_sold = float(input("Enter the total number of shares sold: "))
-if num_sold <= 0:
-    print("Error: Number of sold shares should be >0 and must be <= number of purchased shares")
-    exit()
-elif num_sold > num_purchase:
-    print("Error: Number of sold shares should be >0 and must be <= number of purchased shares")
-    exit()
 sell_price=float(input("Enter the dollar for per share sold : "))
-if sell_price <= 0:
-    print("Error: Sold amount should be >0")
-    exit()
 
-#commision variable
-if num_purchase < 1000:
-    p_commision_rate = 100
+
+# -------------process starts here-----------------
+# check illegal inputs
+# check purchase shares, which cannot be zero or negative
+if num_purchase < 0:
+    # print error msg and end here
+    print("Error: Number of purchased shares should be >= 0")
+# check sale shares, which cannot be zero or negative,
+#  and make sure purchased shares are greater than sold shares
+elif num_sold < 0 or num_purchase < num_sold:
+    print("Error: Number of sold shares should be >= 0 and must be <= number of purchased shares")
+# check amount paid per purchased share, which cannot be zero or negative
+elif buy_price <= 0:
+    print("Error: the purchase maount should be > 0")
+# check amount paid per sold share, which cannot be zero or negative
+elif sell_price <= 0:
+    print("The sold amount should be > 0")
 else:
-    p_commision_rate = 0
+    # -----process: deduct commissions start-------------------------
+    commission_purchase = COMMISSION_FREE
+    commission_sale = COMMISSION_FREE
+    # calculate commission_purchase 
+    if num_purchase < 1000:
+    # --------------------------------calculating profit or loss---------------------------------
+        commission_purchase = COMMISSION_100
+    # calculate commission_sale
+    if num_sold < 1000:
+        commission_sale = COMMISSION_100
+    elif 1000 <= num_sold < 2000:
+        commission_sale = COMMISSION_50
+    else:
+        pass
+    # -----process: deduct commissions end, commission_purchase and commission_sale can be add to the end of every purchase or sale output-------------------------
 
-if num_sold < 1000:
-    s_commision_rate = 100
-elif num_sold >= 1000 and num_sold < 2000:
-    s_commision_rate = 50
-elif num_sold >= 2000:
-    s_commision_rate = 0
+    # purchase and sale calculation section
+    #output
+    total_buy = num_purchase * buy_price
+    total_sold = num_sold * sell_price
+    print("Purchasing Report" )
+    print("Total Purchase Amount : ", total_buy)
+    print("Selling Report")
+    print("Total Sold Amount: ", total_sold)
 
-#calculating the total purchase and sold amount and profit
-total_buy = num_purchase * buy_price
-total_sold = num_sold * sell_price
-profit = total_sold - total_buy - p_commision_rate - s_commision_rate
+    print(OUTPUT_ASTERISKS)
+    print("                 Purchasing Report                  " )
+    print(OUTPUT_ASTERISKS)
+    print("Stock Name : ", stock_name)
+    print("Total Purchase Amount : $", format(total_buy, ".2f"))
+    print("Purchase Commision : $", commission_purchase)
+    print(OUTPUT_ASTERISKS)
+    print("                  Selling Report                     ")
+    print(OUTPUT_ASTERISKS)
+    print("Total Sold Amount: $", format(total_sold, ".2f"))
+    print("Sold Commision : $", commission_sale)
+    print(OUTPUT_ASTERISKS)
 
-#output
-print("*****************************************************")
-print("                 Purchasing Report                  " )
-print("*****************************************************")
-print("Stock Name : ", stock_name)
-print("Total Purchase Amount : $", format(total_buy, ".2f"))
-print("Purchase Commision : $", p_commision_rate)
-print("*****************************************************")
-print("                  Selling Report                     ")
-print("*****************************************************")
-print("Total Sold Amount: $", format(total_sold, ".2f"))
-print("Sold Commision : $", s_commision_rate)
-print("*****************************************************")
-if profit > 0:
-    print("Congratulations, Total Profit: $", format(profit, ".2f"))
-elif profit < 0:
-    print("Good Luck Next Time, You lost: $", format(profit, ".2f"))
-elif profit == 0:
-    print("No Profit or No Loss, Total Profit: $", format(profit, ".2f"))
-print("*****************************************************")
+    # ------profit or loss output: deduct commission, add profit or loss output-----------------
+    result = total_sold - total_buy - commission_purchase - commission_sale
+    if result == 0:
+        print("No Profit or Loss, Total Profit: $0")
+        print(OUTPUT_ASTERISKS)
+    elif result > 0:
+        print("Congratulation, Total Profit: $", format(result,".2f"))
+        print(OUTPUT_ASTERISKS)
+    else:
+        print("Good Luck Next Time, You Lost: $", format(result,".2f"))
+        print(OUTPUT_ASTERISKS)
