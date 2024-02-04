@@ -1,0 +1,152 @@
+# --------------------------------------------------------------------------------Test 1 result--------------------------------------------------------------------------------
+❯ /usr/bin/python3 "/Users/feolive/Projects/SD_Major/OOP/1st semester/groups/lab1/CPRG-216-Group-10-Assignment/Group10_assignment.py"
+----------------------------------------------------
+*** Welcome to Stock Value Calculator Program! ***
+----------------------------------------------------
+Enter stock's name : Mario and Luigi's Software Inc.
+Enter the total number of purchased share : 1500
+Enter the dollar amount per share purchased: 15.87
+Enter the total number of shares sold: 1500
+Enter the dollar for per share sold : 16.9
+****************************************************
+                 Purchasing Report                  
+****************************************************
+Stock Name :  Mario and Luigi's Software Inc.
+Total Purchase Amount : $ 23805.00
+Purchase Commision : $ 0
+****************************************************
+                  Selling Report                     
+****************************************************
+Total Sold Amount: $ 25350.00
+Sold Commision : $ 50
+****************************************************
+Congratulation, Total Profit: $ 1495.00
+****************************************************
+
+# --------------------------------------------------------------------------------Test 2 result--------------------------------------------------------------------------------
+❯ /usr/local/bin/python3 "/Users/feolive/Projects/SD_Major/OOP/1st semester/groups/lab1/CPRG-216-Group-10-Assignment/Group10_assignment.py"
+----------------------------------------------------
+*** Welcome to Stock Value Calculator Program! ***
+----------------------------------------------------
+Enter stock's name : Mario and Luigi's Software Inc.
+Enter the total number of purchased share : 500
+Enter the dollar amount per share purchased: 10
+Enter the total number of shares sold: 500
+Enter the dollar for per share sold : 9
+****************************************************
+                 Purchasing Report                  
+****************************************************
+Stock Name :  Mario and Luigi's Software Inc.
+Total Purchase Amount : $ 5000.00
+Purchase Commision : $ 100
+****************************************************
+                  Selling Report                     
+****************************************************
+Total Sold Amount: $ 4500.00
+Sold Commision : $ 100
+****************************************************
+Good Luck Next Time, You Lost: $ -700.00
+****************************************************
+
+# --------------------------------------------------------------------------------Test 3 result--------------------------------------------------------------------------------
+❯ /usr/local/bin/python3 "/Users/feolive/Projects/SD_Major/OOP/1st semester/groups/lab1/CPRG-216-Group-10-Assignment/Group10_assignment.py"
+----------------------------------------------------
+*** Welcome to Stock Value Calculator Program! ***
+----------------------------------------------------
+Enter stock's name : Mario and Luigi's Software Inc.
+Enter the total number of purchased share : 2000
+Enter the dollar amount per share purchased: 10
+Enter the total number of shares sold: 2000
+Enter the dollar for per share sold : 10
+****************************************************
+                 Purchasing Report                  
+****************************************************
+Stock Name :  Mario and Luigi's Software Inc.
+Total Purchase Amount : $ 20000.00
+Purchase Commision : $ 0
+****************************************************
+                  Selling Report                     
+****************************************************
+Total Sold Amount: $ 20000.00
+Sold Commision : $ 0
+****************************************************
+No Profit or Loss, Total Profit: $0
+****************************************************
+
+# --------------------------------------------------------------------------------Test 4 result--------------------------------------------------------------------------------
+❯ /usr/local/bin/python3 "/Users/feolive/Projects/SD_Major/OOP/1st semester/groups/lab1/CPRG-216-Group-10-Assignment/Group10_assignment.py"
+----------------------------------------------------
+*** Welcome to Stock Value Calculator Program! ***
+----------------------------------------------------
+Enter stock's name : Mario and Luigi's Software Inc.
+Enter the total number of purchased share : 1500
+Enter the dollar amount per share purchased: 10
+Enter the total number of shares sold: 1000
+Enter the dollar for per share sold : 20
+****************************************************
+                 Purchasing Report                  
+****************************************************
+Stock Name :  Mario and Luigi's Software Inc.
+Total Purchase Amount : $ 15000.00
+Purchase Commision : $ 0
+****************************************************
+                  Selling Report                     
+****************************************************
+Total Sold Amount: $ 20000.00
+Sold Commision : $ 50
+****************************************************
+Congratulation, Total Profit: $ 9950.00
+****************************************************
+
+# --------------------------------------------------------------------------------Test 5 result--------------------------------------------------------------------------------
+❯ /usr/local/bin/python3 "/Users/feolive/Projects/SD_Major/OOP/1st semester/groups/lab1/CPRG-216-Group-10-Assignment/Group10_assignment.py"
+----------------------------------------------------
+*** Welcome to Stock Value Calculator Program! ***
+----------------------------------------------------
+Enter stock's name : Mario and Luigi's Software Inc.
+Enter the total number of purchased share : -1000
+Error: Number of purchased shares should be >= 0
+
+# --------------------------------------------------------------------------------Test 6 result--------------------------------------------------------------------------------
+❯ /usr/local/bin/python3 "/Users/feolive/Projects/SD_Major/OOP/1st semester/groups/lab1/CPRG-216-Group-10-Assignment/Group10_assignment.py"
+----------------------------------------------------
+*** Welcome to Stock Value Calculator Program! ***
+----------------------------------------------------
+Enter stock's name : Mario and Luigi's Software Inc.
+Enter the total number of purchased share : 10
+Enter the dollar amount per share purchased: -20
+Error: the purchase maount should be > 0
+
+# --------------------------------------------------------------------------------Test 7 result--------------------------------------------------------------------------------
+❯ /usr/local/bin/python3 "/Users/feolive/Projects/SD_Major/OOP/1st semester/groups/lab1/CPRG-216-Group-10-Assignment/Group10_assignment.py"
+----------------------------------------------------
+*** Welcome to Stock Value Calculator Program! ***
+----------------------------------------------------
+Enter stock's name : Mario and Luigi's Software Inc.
+Enter the total number of purchased share : 10
+Enter the dollar amount per share purchased: 10
+Enter the total number of shares sold: -20
+Error: Number of sold shares should be >= 0 and must be <= number of purchased shares
+
+# --------------------------------------------------------------------------------Test 8 result--------------------------------------------------------------------------------
+❯ /usr/local/bin/python3 "/Users/feolive/Projects/SD_Major/OOP/1st semester/groups/lab1/CPRG-216-Group-10-Assignment/Group10_assignment.py"
+----------------------------------------------------
+*** Welcome to Stock Value Calculator Program! ***
+----------------------------------------------------
+Enter stock's name : Mario and Luigi's Software Inc.
+Enter the total number of purchased share : 10
+Enter the dollar amount per share purchased: 10
+Enter the total number of shares sold: 10
+Enter the dollar for per share sold : -10
+The sold amount should be > 0
+
+# --------------------------------------------------------------------------------Test 9 result--------------------------------------------------------------------------------
+❯ /usr/local/bin/python3 "/Users/feolive/Projects/SD_Major/OOP/1st semester/groups/lab1/CPRG-216-Group-10-Assignment/Group10_assignment.py"
+----------------------------------------------------
+*** Welcome to Stock Value Calculator Program! ***
+----------------------------------------------------
+Enter stock's name : Mario and Luigi's Software Inc.
+Enter the total number of purchased share : 20
+Enter the dollar amount per share purchased: 10
+Enter the total number of shares sold: 30
+Error: Number of sold shares should be >= 0 and must be <= number of purchased shares
